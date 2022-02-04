@@ -1,0 +1,19 @@
+{
+	"author": "Dimas López <me@dimaslz.io> (dimaslz)",
+  "repository": {
+    "url": "git+https://github.com/dimaslz/react-dynamic-classname.git",
+    "type": "git"
+  },
+  "private": true,
+  "workspaces": ["playground", "./packages/*"],
+	"scripts": {
+		"playground": "yarn workspace playground",
+		"build:playground": "yarn playground build",
+		"dev:playground": "yarn playground dev",
+		"lib": "yarn workspace @dimaslz/react-dynamic-classname",
+		"test:lib": "yarn lib test",
+		"test": "yarn test:lib",
+		"build:lib": "yarn lib build && yarn build:lib-types",
+		"build:lib-types": "yarn lib tsc --emitDeclarationOnly && yarn lib tsc-alias"
+	}
+}
