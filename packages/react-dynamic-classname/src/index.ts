@@ -1,1 +1,1 @@
-export { default as ReactDynamicClassName } from "./ReactDynamicClassName"
+export { default as ReactDynamicClassName } from './ReactDynamicClassName';

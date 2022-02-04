@@ -15,6 +15,9 @@
 		"test:lib": "yarn lib test",
 		"test": "yarn test:lib",
 		"build:lib": "yarn lib build && yarn build:lib-types",
-		"build:lib-types": "yarn lib tsc --emitDeclarationOnly && yarn lib tsc-alias"
+		"build:lib-types": "yarn lib tsc --emitDeclarationOnly && yarn lib tsc-alias",
+		"lint:lib": "yarn lib lint",
+		"lint:playground": "yarn playground lint",
+		"lint": "yarn lint:lib && yarn lint:playground"
 	}
 }

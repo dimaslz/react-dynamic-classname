@@ -1,0 +1,1 @@
+export const PROP_NAME = 'd-className';
