@@ -8,7 +8,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@dimaslz/react-dynamic-classname": "^1.0.0",
+    "@dimaslz/react-dynamic-classname": "^0.0.2",
     "@types/highlight.js": "^10.1.0",
     "cssnano": "^5.0.16",
     "highlight.js": "^11.4.0",
