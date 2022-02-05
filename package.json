@@ -7,17 +7,16 @@
   "private": true,
   "workspaces": ["playground", "./packages/*"],
 	"scripts": {
+		"test": "yarn lib:test",
+		"lint": "yarn lint:lib && yarn playground:lint",
 		"playground": "yarn workspace playground",
-		"prebuild:playground": "yarn build:lib",
-		"build:playground": "yarn playground build",
-		"dev:playground": "yarn playground dev",
+		"preplayground:build": "yarn lib:build",
+		"playground:build": "yarn playground build",
+		"playground:dev": "yarn playground dev",
+		"playground:lint": "yarn playground lint",
 		"lib": "yarn workspace @dimaslz/react-dynamic-classname",
-		"test:lib": "yarn lib test",
-		"test": "yarn test:lib",
-		"build:lib": "yarn lib build && yarn build:lib-types",
-		"build:lib-types": "yarn lib tsc --emitDeclarationOnly && yarn lib tsc-alias",
-		"lint:lib": "yarn lib lint",
-		"lint:playground": "yarn playground lint",
-		"lint": "yarn lint:lib && yarn lint:playground"
+		"lib:test": "yarn lib test",
+		"lib:build": "yarn lib build",
+		"lib:lint": "yarn lib lint"
 	}
 }
