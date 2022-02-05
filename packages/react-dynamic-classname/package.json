@@ -32,7 +32,8 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "rimraf dist",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && yarn lib-types",
+    "lib-types": "yarn tsc --emitDeclarationOnly && yarn tsc-alias",
     "preview": "vite preview",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
