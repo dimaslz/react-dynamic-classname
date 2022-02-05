@@ -86,5 +86,6 @@
     "tsc-alias": "^1.5.0",
     "typescript": "^4.4.4",
     "vite": "^2.7.2"
-  }
+  },
+  "description": "React component to have a flexible className as Vue style but in React."
 }
