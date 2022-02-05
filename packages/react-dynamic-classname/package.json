@@ -1,6 +1,6 @@
 {
   "name": "@dimaslz/react-dynamic-classname",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "Dimas López <me@dimaslz.io> (dimaslz)",
   "repository": {
     "url": "git+https://github.com/dimaslz/react-dynamic-classname.git",
@@ -87,5 +87,6 @@
     "typescript": "^4.4.4",
     "vite": "^2.7.2"
   },
+  "license": "MIT",
   "description": "React component to have a flexible className as Vue style but in React."
 }
