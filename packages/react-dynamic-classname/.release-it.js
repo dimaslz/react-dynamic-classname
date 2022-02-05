@@ -1,6 +1,6 @@
 module.exports = {
   "hooks": {
-    "before:init": ["yarn test"],
+    "before:init": ["yarn test", "yarn lint --quiet"],
     "after:bump": "NODE_ENV=production yarn build",
     "after:git:release": "echo After git push, before github release",
     "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
