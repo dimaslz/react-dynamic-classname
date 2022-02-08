@@ -50,7 +50,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.12",
+    "@babel/core": "^7.17.2",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@release-it/bumper": "^3.0.1",
@@ -71,7 +71,7 @@
     "babel-jest": "^27.4.6",
     "cpy-cli": "^3.1.1",
     "dotenv": "^16.0.0",
-    "dotenv-cli": "^4.1.1",
+    "dotenv-cli": "^5.0.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.3.0",
