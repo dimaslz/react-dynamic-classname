@@ -50,7 +50,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.12",
+    "@babel/core": "^7.17.2",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@release-it/bumper": "^3.0.1",
@@ -66,7 +66,7 @@
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
     "@typescript-eslint/eslint-plugin": "^2.28.0",
-    "@typescript-eslint/parser": "^5.10.2",
+    "@typescript-eslint/parser": "^5.12.0",
     "@vitejs/plugin-react": "^1.0.7",
     "babel-jest": "^27.4.6",
     "cpy-cli": "^3.1.1",
