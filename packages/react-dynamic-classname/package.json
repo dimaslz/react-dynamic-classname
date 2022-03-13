@@ -81,7 +81,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "jest": "^27.4.7",
+    "jest": "^27.5.1",
     "prettier": "^2.5.1",
     "release-it": "^14.12.4",
     "rimraf": "^3.0.2",
