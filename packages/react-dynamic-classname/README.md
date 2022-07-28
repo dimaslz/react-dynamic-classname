@@ -49,7 +49,7 @@ export const App = () => {
 	return (
 		<ReactDynamicClassName>
 			// ...
-			<TAG d-className={{
+			<TAG d-classname={{
 				"class-a": true,
 				"class-b": false,
 				"class-c": true
