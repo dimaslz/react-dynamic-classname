@@ -203,7 +203,6 @@ describe('ReactDynamicClassName', () => {
 				<div className="class-a">example A</div>
 			</ReactDynamicClassName>);
 
-			console.log('baseElement', baseElement);
 			expect(baseElement).toMatchSnapshot();
 		});
 	});
