@@ -1,1 +1,1 @@
-export const PROP_NAME = 'd-className';
+export const PROP_NAME = 'd-classname';

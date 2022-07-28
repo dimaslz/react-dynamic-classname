@@ -12,13 +12,14 @@ export const getChildren: any = (child: any) => {
 	} else {
 		children = condition(children);
 	}
+
 	child = {
 		...child,
 		props: {
 			...child.props,
 			className: child.props[PROP_NAME]
 				? resolveClass(child.props[PROP_NAME])
-				: undefined,
+				: child.props.className,
 			children,
 		},
 	};
