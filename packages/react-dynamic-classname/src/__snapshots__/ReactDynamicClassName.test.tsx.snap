@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReactDynamicClassName Dummy ClassName native 1`] = `
+<body>
+  <div>
+    <div
+      class="class-a"
+    >
+      example A
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReactDynamicClassName Using components as children components as children with class as array of objects 1`] = `
+<body>
+  <div>
+    <div
+      class="class-a"
+    >
+      <div
+        class="class-a"
+      >
+        <h3
+          class="class-a"
+        >
+          Hello Dummy!
+        </h3>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReactDynamicClassName Using components as children use correct class from an Object 1`] = `
+<body>
+  <div>
+    <div
+      class="class-a"
+    >
+      <div
+        class="class-a"
+      >
+        <h3
+          class="class-a"
+        >
+          Hello Dummy!
+        </h3>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReactDynamicClassName Using components as children use correct class from an Object and Array 1`] = `
+<body>
+  <div>
+    <div
+      class="class-a class-c"
+    >
+      <div
+        class="class-a class-c"
+      >
+        <h3
+          class="class-a class-c"
+        >
+          Hello Dummy!
+        </h3>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReactDynamicClassName Using html elements as children use correct class from an Array 1`] = `
+<body>
+  <div>
+    <h1
+      class="class-a"
+    >
+      Hello World!
+    </h1>
+  </div>
+</body>
+`;
+
+exports[`ReactDynamicClassName Using html elements as children use correct class from an Object 1`] = `
+<body>
+  <div>
+    <h1
+      class="class-a"
+    >
+      Hello World!
+    </h1>
+  </div>
+</body>
+`;
+
+exports[`ReactDynamicClassName Using html elements as children use correct class from an Object and Array 1`] = `
+<body>
+  <div>
+    <h1
+      class="class-a class-c"
+    >
+      Hello World!
+    </h1>
+  </div>
+</body>
+`;
+
+exports[`ReactDynamicClassName Using multiple components as children components as children with class as array of objects 1`] = `
+<body>
+  <div>
+    <div
+      class="class-a"
+    >
+      <div
+        class="class-a"
+      >
+        <h3
+          class="class-a"
+        >
+          Hello Dummy!
+        </h3>
+      </div>
+    </div>
+    <div
+      class="class-a"
+    >
+      <div
+        class="class-a"
+      >
+        <h3
+          class="class-a"
+        >
+          Hello Dummy!
+        </h3>
+      </div>
+    </div>
+    <div
+      class="class-a"
+    >
+      <div
+        class="class-a"
+      >
+        <h3
+          class="class-a"
+        >
+          Hello Dummy!
+        </h3>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReactDynamicClassName Using multiple components as children use correct class from an Object 1`] = `
+<body>
+  <div>
+    <div
+      class="class-a"
+    >
+      <div
+        class="class-a"
+      >
+        <h3
+          class="class-a"
+        >
+          Hello Dummy!
+        </h3>
+      </div>
+    </div>
+    <div
+      class="class-a"
+    >
+      <div
+        class="class-a"
+      >
+        <h3
+          class="class-a"
+        >
+          Hello Dummy!
+        </h3>
+      </div>
+    </div>
+    <div
+      class="class-a"
+    >
+      <div
+        class="class-a"
+      >
+        <h3
+          class="class-a"
+        >
+          Hello Dummy!
+        </h3>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReactDynamicClassName Using multiple components as children use correct class from an Object and Array 1`] = `
+<body>
+  <div>
+    <div
+      class="class-a class-c"
+    >
+      <div
+        class="class-a class-c"
+      >
+        <h3
+          class="class-a class-c"
+        >
+          Hello Dummy!
+        </h3>
+      </div>
+    </div>
+    <div
+      class="class-a class-c"
+    >
+      <div
+        class="class-a class-c"
+      >
+        <h3
+          class="class-a class-c"
+        >
+          Hello Dummy!
+        </h3>
+      </div>
+    </div>
+    <div
+      class="class-a class-c"
+    >
+      <div
+        class="class-a class-c"
+      >
+        <h3
+          class="class-a class-c"
+        >
+          Hello Dummy!
+        </h3>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReactDynamicClassName Using multiple elements as children elements as children with class as Array and Object 1`] = `
+<body>
+  <div>
+    <div
+      class="class-a class-c"
+    >
+      example A
+    </div>
+    <div
+      class="class-a class-c"
+    >
+      example B
+    </div>
+    <div
+      class="class-a class-c"
+    >
+      example C
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReactDynamicClassName Using multiple elements as children elements as children with class as array of objects 1`] = `
+<body>
+  <div>
+    <div
+      class="class-a"
+    >
+      example A
+    </div>
+    <div
+      class="class-a"
+    >
+      example B
+    </div>
+    <div
+      class="class-a"
+    >
+      example C
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReactDynamicClassName Using multiple elements as children elements as children with class as objects 1`] = `
+<body>
+  <div>
+    <div
+      class="class-a"
+    >
+      example A
+    </div>
+    <div
+      class="class-a"
+    >
+      example B
+    </div>
+    <div
+      class="class-a"
+    >
+      example C
+    </div>
+  </div>
+</body>
+`;
