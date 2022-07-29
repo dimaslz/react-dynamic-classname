@@ -18,9 +18,9 @@ module.exports = {
     }
   },
   "plugins": {
-    "@release-it/bumper": {
-      "out": ["package.json", "package.json"]
-    },
+    // "@release-it/bumper": {
+    //   "out": ["package.json", "package.json"]
+    // },
     "@release-it/conventional-changelog": {
       "preset": "conventionalcommits",
       "infile": "CHANGELOG.md"
