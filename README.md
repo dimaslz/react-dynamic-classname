@@ -85,3 +85,9 @@ Live demo: [https://react-dynamic-classname.dimaslz.dev](https://react-dynamic-c
 	linkedin: "https://www.linkedin.com/in/dimaslopezzurita"
 }
 ```
+
+## My other projects
+- https://randomdata.loremapi.io: API mock data (no open source)
+- https://icon-lib-builder.dimaslz.dev: SVG to Framework component (open source soon)
+- https://ng-v-class.dimaslz.dev: Use dynamic class in Angular as Vue (open source)
+- https://ng-heroicons.dimaslz.dev: Use Heroicons.com in you Angular projects (open source)
