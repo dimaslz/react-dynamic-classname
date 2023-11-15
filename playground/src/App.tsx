@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import hljs from 'highlight.js';
-import { ReactDynamicClassName } from '@dimaslz/react-dynamic-classname';
+// import { ReactDynamicClassName } from '@dimaslz/react-dynamic-classname';
+import { ReactDynamicClassName } from '../../packages/react-dynamic-classname/src/ReactDynamicClassName';
 
 import CodePresentationComponent from './components/code-presentation.component';
 import copyToClipboard from './utils/copy-to-clipboard.utils';
@@ -9,7 +10,7 @@ import ReactLogo from './logo.svg';
 import './App.css';
 
 const exampleCodeByArrayString = `<ReactDynamicClassName>
-  <h1 d-classname={[
+  <h1 className={[
     { "class-a": true },
     { "class-b": false }
   ]}>
@@ -18,7 +19,7 @@ const exampleCodeByArrayString = `<ReactDynamicClassName>
 </ReactDynamicClassName>`;
 
 const exampleCodeByObjectString = `<ReactDynamicClassName>
-  <h1 d-classname={{
+  <h1 className={{
     "class-a": false,
     "class-b": true
   }}>
@@ -27,7 +28,7 @@ const exampleCodeByObjectString = `<ReactDynamicClassName>
 </ReactDynamicClassName>`;
 
 const exampleCodeByObjectArrayString = `<ReactDynamicClassName>
-  <h1 d-classname={[
+  <h1 className={[
     { "class-a": true, "class-b": false },
     [{ "class-c": true, "class-d": false }]
   ]}>
@@ -38,6 +39,18 @@ const exampleCodeByObjectArrayString = `<ReactDynamicClassName>
 const exampleCodeComponentAsChildrenString = `<ReactDynamicClassName>
 	<div className="text-white">html element</div>
 	<DummyComponent />
+</ReactDynamicClassName>`;
+
+const exampleCodeComponentAsChildrenString2 = `<ReactDynamicClassName>
+	<div className="text-white">html element</div>
+	<div>
+		<div>
+			<div className={[
+				{ "class-a": true, "class-b": false },
+				[{ "class-c": true, "class-d": false }]
+			]}>something</div>
+		</div>
+	</div>
 </ReactDynamicClassName>`;
 
 export const App: FC = () => {
@@ -58,6 +71,10 @@ export const App: FC = () => {
 		exampleCodeComponentAsChildrenString,
 		{ language: 'typescript' },
 	).value;
+	const exampleCodeComponentAsChildrenCode2 = hljs.highlight(
+		exampleCodeComponentAsChildrenString2,
+		{ language: 'typescript' },
+	).value;
 
 	const onClickCommandExample = ($event: React.MouseEvent): void => {
 		setCopied(() => true);
@@ -75,8 +92,8 @@ export const App: FC = () => {
 	};
 
 	const DummyComponent = () => (
-		<div d-classname={{ 'bg-yellow-500': true }}>
-			<h1 d-classname={{ 'class-a': false, 'class-b': true }}>
+		<div className={JSON.stringify({ 'bg-yellow-500': true })}>
+			<h1 className={JSON.stringify({ 'class-a': false, 'class-b': true })}>
 				Test dynamic React class like Vue
 			</h1>
 		</div>
@@ -130,7 +147,7 @@ export const App: FC = () => {
 					<div className="flex w-full">
 						<CodePresentationComponent
 							title="Code example (by array of object)"
-							description="All components inside <code>ReactDynamicClassName</code> will have the attribute <code>d-classname</code> for dynamic classes like <span class='text-green-500'>Vue</span>"
+							description="All components inside <code>ReactDynamicClassName</code> will have the attribute <code>className</code> for dynamic classes like <span class='text-green-500'>Vue</span>"
 							snippets={[{ type: 'html', code: exampleCodeByArrayCode }]}
 						/>
 					</div>
@@ -141,7 +158,7 @@ export const App: FC = () => {
 								<h2 className="text-xl mb-2 dark:text-white text-gray-800">Code result</h2>
 								<div className="rounded-lg dark:bg-gray-800 bg-gray-200 w-full h-full p-2">
 									<ReactDynamicClassName>
-										<h1 d-classname={{ 'class-a': true, 'class-b': false }}>
+										<h1 className={JSON.stringify({ 'class-a': true, 'class-b': false })}>
                       Test dynamic React class like Vue
 										</h1>
 									</ReactDynamicClassName>
@@ -165,7 +182,7 @@ export const App: FC = () => {
 					<div className="flex w-full">
 						<CodePresentationComponent
 							title="Code example (by object)"
-							description="All components inside <code>ReactDynamicClassName</code> will have the attribute <code>d-classname</code> for dynamic classes like <span class='text-green-500'>Vue</span>"
+							description="All components inside <code>ReactDynamicClassName</code> will have the attribute <code>className</code> for dynamic classes like <span class='text-green-500'>Vue</span>"
 							snippets={[{ type: 'html', code: exampleCodeByObjectCode }]}
 						/>
 					</div>
@@ -197,7 +214,7 @@ export const App: FC = () => {
 					<div className="flex w-full">
 						<CodePresentationComponent
 							title="Code example (by array of arrays and objects)"
-							description="All components inside <code>ReactDynamicClassName</code> will have the attribute <code>d-classname</code> for dynamic classes like <span class='text-green-500'>Vue</span>"
+							description="All components inside <code>ReactDynamicClassName</code> will have the attribute <code>className</code> for dynamic classes like <span class='text-green-500'>Vue</span>"
 							snippets={[{ type: 'html', code: exampleCodeByObjectArrayCode }]}
 						/>
 					</div>
@@ -208,10 +225,10 @@ export const App: FC = () => {
 								<h2 className="text-xl mb-2 dark:text-white text-gray-800">Code result</h2>
 								<div className="rounded-lg dark:bg-gray-800 bg-gray-200 w-full h-full p-2">
 									<ReactDynamicClassName>
-										<h1 d-classname={[
+										<h1 className={JSON.stringify([
 											{ 'class-a': true, 'class-b': false },
 											[{ 'class-c': true, 'class-d': false }],
-										]}
+										])}
 										>
                       Test dynamic React class like Vue
 										</h1>
@@ -239,7 +256,7 @@ export const App: FC = () => {
 					<div className="flex w-full">
 						<CodePresentationComponent
 							title="Code example with components as children"
-							description="All components inside <code>ReactDynamicClassName</code> will have the attribute <code>d-classname</code> for dynamic classes like <span class='text-green-500'>Vue</span> but can still use native <code>className</code>"
+							description="All components inside <code>ReactDynamicClassName</code> will have the attribute <code>className</code> for dynamic classes like <span class='text-green-500'>Vue</span> but can still use native <code>className</code>"
 							snippets={[{ type: 'html', code: exampleCodeComponentAsChildrenCode }]}
 						/>
 					</div>
@@ -250,8 +267,45 @@ export const App: FC = () => {
 								<h2 className="text-xl mb-2 dark:text-white text-gray-800">Code result</h2>
 								<div className="rounded-lg dark:bg-gray-800 bg-gray-200 w-full h-full p-2">
 									<ReactDynamicClassName>
-										<div className="text-white">html element</div>
+										<div className="text-white font-bold uppercase">html element</div>
 										<DummyComponent  />
+									</ReactDynamicClassName>
+								</div>
+
+								<div className="text-xs mt-2 dark:text-white text-gray-800">
+                  Here the result where is rendered the common html element with native <code>className</code> and a component.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{/*  */}
+				<div className="flex justify-center w-full space-x-4 mt-10">
+					<div className="flex w-full">
+						<CodePresentationComponent
+							title="Code example with components as children"
+							description="All components inside <code>ReactDynamicClassName</code> will have the attribute <code>className</code> for dynamic classes like <span class='text-green-500'>Vue</span> but can still use native <code>className</code>"
+							snippets={[{ type: 'html', code: exampleCodeComponentAsChildrenCode2 }]}
+						/>
+					</div>
+
+					<div className="flex w-full">
+						<div className="dark:bg-gray-900 bg-white rounded w-full">
+							<div className="flex h-full flex-col">
+								<h2 className="text-xl mb-2 dark:text-white text-gray-800">Code result</h2>
+								<div className="rounded-lg dark:bg-gray-800 bg-gray-200 w-full h-full p-2">
+									<ReactDynamicClassName>
+										<div className="text-white">html element</div>
+										<div>
+											<div>
+												<div className={JSON.stringify([
+													{ 'class-a': true, 'class-b': false },
+													[{ 'class-c': true, 'class-d': false }],
+												])}
+												>something</div>
+											</div>
+										</div>
 									</ReactDynamicClassName>
 								</div>
 

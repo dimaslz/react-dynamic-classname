@@ -11,9 +11,9 @@ type PROPS = {
 }
 
 const DummyComponent: FC<PROPS> = ({ klass }: PROPS) => (
-	<div d-classname={klass}>
-		<div d-classname={klass}>
-			<h3 d-classname={klass}>
+	<div className={JSON.stringify(klass)}>
+		<div className={JSON.stringify(klass)}>
+			<h3 className={JSON.stringify(klass)}>
 				Hello Dummy!
 			</h3>
 		</div>
@@ -22,7 +22,7 @@ const DummyComponent: FC<PROPS> = ({ klass }: PROPS) => (
 
 const Demo: FC<PROPS> = ({ klass, children = null }: PROPS) =>
 	 (<ReactDynamicClassName>
-		<h1 d-classname={klass}>
+		<h1 className={JSON.stringify(klass)}>
 			{children || 'Hello World!'}
 		</h1>
 	</ReactDynamicClassName>)
@@ -156,9 +156,9 @@ describe('ReactDynamicClassName', () => {
 	describe('Using multiple elements as children', () => {
 		test('elements as children with class as objects', () => {
 			const { baseElement } = render(<Demo>
-				<div d-classname={{ 'class-a': true, 'class-b': false }}>example A</div>
-				<div d-classname={{ 'class-a': true, 'class-b': false }}>example B</div>
-				<div d-classname={{ 'class-a': true, 'class-b': false }}>example C</div>
+				<div className={JSON.stringify({ 'class-a': true, 'class-b': false })}>example A</div>
+				<div className={JSON.stringify({ 'class-a': true, 'class-b': false })}>example B</div>
+				<div className={JSON.stringify({ 'class-a': true, 'class-b': false })}>example C</div>
 			</Demo>);
 
 			expect(baseElement).toMatchSnapshot();
@@ -166,9 +166,9 @@ describe('ReactDynamicClassName', () => {
 
 		test('elements as children with class as array of objects', () => {
 			const { baseElement } = render(<Demo>
-				<div d-classname={[{ 'class-a': true }, { 'class-b': false }]}>example A</div>
-				<div d-classname={[{ 'class-a': true }, { 'class-b': false }]}>example B</div>
-				<div d-classname={[{ 'class-a': true }, { 'class-b': false }]}>example C</div>
+				<div className={JSON.stringify([{ 'class-a': true }, { 'class-b': false }])}>example A</div>
+				<div className={JSON.stringify([{ 'class-a': true }, { 'class-b': false }])}>example B</div>
+				<div className={JSON.stringify([{ 'class-a': true }, { 'class-b': false }])}>example C</div>
 			</Demo>);
 
 			expect(baseElement).toMatchSnapshot();
@@ -176,20 +176,20 @@ describe('ReactDynamicClassName', () => {
 
 		test('elements as children with class as Array and Object', () => {
 			const { baseElement } = render(<Demo>
-				<div d-classname={[
+				<div className={JSON.stringify([
 					{ 'class-a': true, 'class-b': false },
 					[{ 'class-c': true, 'class-d': false }],
-				]}
+				])}
 				>example A</div>
-				<div d-classname={[
+				<div className={JSON.stringify([
 					{ 'class-a': true, 'class-b': false },
 					[{ 'class-c': true, 'class-d': false }],
-				]}
+				])}
 				>example B</div>
-				<div d-classname={[
+				<div className={JSON.stringify([
 					{ 'class-a': true, 'class-b': false },
 					[{ 'class-c': true, 'class-d': false }],
-				]}
+				])}
 				>example C</div>
 			</Demo>);
 

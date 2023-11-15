@@ -1,7 +1,8 @@
-import { FC } from 'react';
+import { ReactNode, isValidElement } from 'react';
 import { condition  } from './utils';
 
-const resolveChildren = (children: any) => {
+
+const resolveChildren = (children: any, attrName: string): ReactNode => {
 	if ('children' in children?.props) {
 		const propChildren = children.props.children;
 		const childrenType = propChildren.type;
@@ -24,7 +25,7 @@ const resolveChildren = (children: any) => {
 					key: index,
 				};
 
-				return condition(child);
+				return condition(child, attrName);
 			},
 			);
 	}
@@ -32,18 +33,20 @@ const resolveChildren = (children: any) => {
 	return children;
 };
 
-export const ReactDynamicClassName: FC = ({
+export const ReactDynamicClassName = ({
 	children,
-}: any) => {
+	attrName = '',
+}: { children: ReactNode; attrName?: string; }): any => {
 	if (Array.isArray(children)) {
-		return children.map((c: any) => resolveChildren(c));
+		return children.map((c: any) => resolveChildren(c, attrName));
 	}
 
-	if (Array.isArray(children.props.children)) {
-		return children.props.children.map((c: any) => resolveChildren(c));
+
+	if (isValidElement(children) && children?.props && Array.isArray(children.props.children)) {
+		return children.props.children.map((c: any) => resolveChildren(c, attrName));
 	}
 
-	return resolveChildren(children);
+	return resolveChildren(children, attrName);
 };
 
 export default ReactDynamicClassName;
