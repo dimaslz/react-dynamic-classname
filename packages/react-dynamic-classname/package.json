@@ -1,18 +1,18 @@
 {
   "name": "@dimaslz/react-dynamic-classname",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "author": "Dimas López <me@dimaslz.io> (dimaslz)",
   "repository": {
     "url": "git+https://github.com/dimaslz/react-dynamic-classname.git",
     "type": "git"
   },
   "main": "dist/index.cjs.js",
-  "module": "dist/index.es.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs.js",
-      "import": "./dist/index.es.js"
+      "import": "./dist/index.js"
     }
   },
   "sideEffects": false,

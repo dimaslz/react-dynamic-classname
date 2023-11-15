@@ -17,6 +17,7 @@ export default defineConfig({
 	},
 	build: {
 		lib: {
+			name: 'react-dynamic-class',
 			entry: resolve(__dirname, 'src', 'index.ts'),
 			formats: ['es', 'cjs'],
 			fileName: (ext: string): string => `index.${ext}.js`,
@@ -25,6 +26,7 @@ export default defineConfig({
 		rollupOptions: {
 			external: [...Object.keys(peerDependencies), ...Object.keys(dependencies)],
 		},
+		ssr: true,
 		target: 'esnext',
 		sourcemap: true,
 	},

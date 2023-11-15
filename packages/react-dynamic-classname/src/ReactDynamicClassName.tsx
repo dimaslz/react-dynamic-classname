@@ -1,4 +1,4 @@
-import { ReactNode, isValidElement } from 'react';
+import { ReactNode } from 'react';
 import { condition  } from './utils';
 
 
@@ -41,9 +41,8 @@ export const ReactDynamicClassName = ({
 		return children.map((c: any) => resolveChildren(c, attrName));
 	}
 
-
-	if (isValidElement(children) && children?.props && Array.isArray(children.props.children)) {
-		return children.props.children.map((c: any) => resolveChildren(c, attrName));
+	if ((children as any)?.props && Array.isArray((children as any).props.children)) {
+		return (children as any).props.children.map((c: any) => resolveChildren(c, attrName));
 	}
 
 	return resolveChildren(children, attrName);
